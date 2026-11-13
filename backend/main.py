@@ -28,7 +28,23 @@ app = FastAPI(
 BASE_DIR = Path(__file__).resolve().parent
 FRONTEND_DIR = BASE_DIR.parent / "frontend"
 
-Base.metadata.create_all(bind=engine)
+
+def initialize_database() -> None:
+    if engine.dialect.name == "postgresql":
+        with engine.begin() as connection:
+            connection.execute(
+                text(
+                    "SELECT pg_advisory_xact_lock("
+                    "hashtext('codingbodhi_schema_init'))"
+                )
+            )
+            Base.metadata.create_all(bind=connection)
+        return
+
+    Base.metadata.create_all(bind=engine)
+
+
+initialize_database()
 
 
 @app.get("/health")
