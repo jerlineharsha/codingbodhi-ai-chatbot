@@ -31,3 +31,23 @@ database; for PostgreSQL, provide a SQLAlchemy PostgreSQL URL in `backend/.env`.
 The browser keeps an anonymous user ID and the active conversation in local
 storage. This supports conversation continuity on that browser, but is not an
 account or authentication system.
+
+## Deploy on Vercel
+
+The project root is the Vercel root directory. The root `main.py` exposes the
+FastAPI app, and the root `requirements.txt` installs the backend dependencies.
+
+Conversation history requires persistent storage. Before deploying, create a
+PostgreSQL database (for example, with Neon) and configure these environment
+variables in the Vercel project settings:
+
+- `DATABASE_URL`: the database's PostgreSQL connection string. Use the pooled
+  connection string if the provider offers one.
+- `GEMINI_API_KEY`: a valid Google AI Studio API key.
+
+Do not commit either value. The app rejects SQLite on Vercel because serverless
+storage is not durable. `GEMINI_MODEL` and `GEMINI_FALLBACK_MODEL` are optional.
+
+To deploy, import `jerlineharsha/codingbodhi-ai-chatbot` into Vercel, keep the
+project root as the root directory, add the environment variables, and deploy.
+After deployment, check `/health` and open the site URL to verify the app.

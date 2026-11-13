@@ -14,6 +14,9 @@ DATABASE_URL = os.getenv(
     f"sqlite:///{(BASE_DIR / 'codingbodhi.db').as_posix()}",
 )
 
+if os.getenv("VERCEL") and DATABASE_URL.startswith("sqlite"):
+    raise RuntimeError("Set DATABASE_URL to a persistent PostgreSQL database on Vercel.")
+
 engine_options = {"pool_pre_ping": True}
 if DATABASE_URL.startswith("sqlite"):
     engine_options["connect_args"] = {"check_same_thread": False}
