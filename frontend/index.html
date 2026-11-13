@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>CodingBodhi - Learn. Build. Grow.</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+
+        <div class="logo-area">
+
+            <img src="./assets/codingbodhi-logo.png"
+                 alt="CodingBodhi Logo"
+                 class="site-logo">
+
+            <span>CodingBodhi</span>
+
+        </div>
+
+        <nav class="navigation">
+
+            <a href="#">Home</a>
+            <a href="#">Courses</a>
+            <a href="#">Internships</a>
+            <a href="#">Roadmaps</a>
+            <a href="#">Contact</a>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="hero-small-text">
+                    LEARN • BUILD • GROW
+                </p>
+
+                <h1>
+                    Build Your Future
+                    <br>
+                    With <span>CodingBodhi</span>
+                </h1>
+
+                <p class="hero-description">
+
+                    Learn practical technology skills,
+                    work on real-world projects and
+                    prepare yourself for your dream career.
+
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button class="primary-button">
+                        Explore Courses
+                    </button>
+
+                    <button class="secondary-button">
+                        Explore Internships
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="content-section">
+
+            <h2>
+                Learn In-Demand Skills
+            </h2>
+
+            <p>
+                Build practical skills through
+                industry-focused learning.
+            </p>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>🐍 Python</h3>
+                    <p>
+                        Learn Python programming
+                        from basics to projects.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🤖 Artificial Intelligence</h3>
+                    <p>
+                        Explore AI, Machine Learning
+                        and Generative AI.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🌐 Web Development</h3>
+                    <p>
+                        Build modern websites
+                        and web applications.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="content-section">
+
+            <h2>
+                Gain Real-World Experience
+            </h2>
+
+            <p>
+                Work on practical projects and
+                develop industry-ready skills.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <button
+        class="chatbot-button"
+        id="chatbotButton"
+        aria-label="Open CodingBodhi AI">
+
+        <img
+            src="./assets/codingbodhi-logo.png"
+            alt="CodingBodhi AI">
+
+    </button>
+
+
+    <div
+        class="chatbot-window"
+        id="chatbotWindow">
+
+        <div class="chatbot-header">
+
+            <div class="chatbot-title">
+
+                <img
+                    src="./assets/codingbodhi-logo.png"
+                    alt="CodingBodhi AI">
+
+                <div>
+
+                    <h3>
+                        CodingBodhi AI
+                    </h3>
+
+                    <span>
+                        ● Online
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="chatbot-header-actions">
+                <button
+                    class="new-chat-button"
+                    id="newChatButton"
+                    type="button">
+                    New chat
+                </button>
+
+                <button
+                    class="close-button"
+                    id="closeButton"
+                    aria-label="Close chatbot">
+                    &times;
+                </button>
+            </div>
+
+        </div>
+
+        <div
+            class="chat-messages"
+            id="chatMessages">
+
+            <div class="message bot-message">
+
+                <div class="message-content">
+
+                    <p id="welcomeMessage"></p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="chat-input-area">
+
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Ask me anything..."
+                autocomplete="off"
+                maxlength="4000"
+                aria-label="Type your message">
+
+            <button
+                id="sendButton"
+                aria-label="Send message">
+
+                ➤
+
+            </button>
+
+        </div>
+
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
